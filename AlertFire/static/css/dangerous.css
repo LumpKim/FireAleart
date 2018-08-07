@@ -1,0 +1,67 @@
+@charset "utf-8"; /*CSS3 Document*/
+titlefont {
+	color: white;
+	font-size: 50;
+	text-align:center;
+}
+
+centerling{
+	margin-left:580;
+}
+
+body{
+	background-color:black;
+}
+
+red1{
+	color:red;
+	font-size:50;
+}
+
+whilte1{
+	color:white;
+}
+
+h1 {
+	text-align: center;
+	color: white;
+	font-size: 60px;
+	background-color: black;
+	font-family: 궁서;
+}
+
+sow {
+	text-align: center;
+	color: white;
+	font-size: 35px;
+	background-color:black;
+}
+
+p {
+	text-align: center;
+	color: red;
+	font-size: 18px;
+	background-color: lightyellow;
+}
+
+kim {
+	color: blue;
+	font-size: 40px;
+	background-color: lightyellow;
+}
+
+nm {
+	text-align: center;
+	color: black;
+	font-size: 25px;
+	background-color: lightyellow;
+	font-family: 궁서;
+}
+
+gay {
+	text-align: center;
+	clolr: pink;
+	font-size: 30px;
+	background-color: lightyellow;
+	font-family: 궁서;
+}

@@ -1,0 +1,51 @@
+<html>
+<link rel="stylesheet" type="text/css" href="/static/css/dangerous.css">
+<link rel="stylesheet" type="text/css" href="/static/css/menu.css">
+<head>
+<script src="/static/js/menu.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="http://malsup.github.com/jquery.cycle2.js"></script>
+<script type="text/javascript">
+function confirm_alert(node) {
+    return confirm("Please click on OK to continue.");
+}
+</script>
+<title>우리 아이가 타고있어요</title>
+<img src="/static/images/logo.png" width="100" height="70">
+<div style="float: right";>
+	<img src="/static/images/logo.png" width="100" height="70">
+</div>
+<titlefont>
+<centerling>우리 아이가</titlefont><b><red1>타고</red1></b><titlefont>있어요</titlefont></centerling>
+</head>
+<body>
+<div id="wrapper">
+		<nav id="topMenu">
+			<ul>
+				<li class="topMenuLi"><a class="menuLink"
+					href="main.html">모니터링</a>
+				<li>|</li>
+				<li class="topMenuLi"><a class="menuLink"
+					href="dangerous.html">위기등급 관리</a>
+					<ul class="submenu">
+						<li><a href="dangerous.html" class="submenuLink longLink">등급 발령</a></li>
+						<li><a href="main.html"onclick="alert('등급을 2등급으로 올려주세요.')" class="submenuLink longLink">관리자 도구</a></li>
+					</ul></li>
+			</ul>
+		</nav>
+	</div>
+	<h1>현재 상황 : 0등급</h1>
+	<center>
+	<sow><strong> <whilte1>최고온도(60℃): </whilte1> </strong>
+	<meter value="10" min="0"  max="100" > 60% </meter></p></center></sow>
+	<center><sow>위험온도를 설정해 주십시오.(기본 값 100)</sow>
+	<form name="input" method="post" action="">
+		<input type="text" name="memberName" maxlength="10"> <input
+			type="submit" value="전송">
+	</form></center>
+	<br><br><br><br><br><br><br><br><br><br>
+	<center><a href='dangerous2.html'>2등급으로 전환</a><button type = "button" onclick = "location.href='/templates/dangerous2.html'">2등급으로 전환</button></center>
+	<center><button type = "button" onclick = "location.href='/templates/dangerous1.html'">1등급으로 전환</button></center>
+</body>
+</html>

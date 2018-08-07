@@ -1,0 +1,27 @@
+@charset "utf-8"; /*CSS3 Document*/
+titlefont {
+	color: white;
+	font-size: 50;
+	text-align:center;
+}
+
+centerling{
+	margin-left:315;
+}
+
+body{
+	background-color:black;
+}
+
+red1{
+	color:red ;
+	font-size:50;
+}
+
+whilte1{
+	color:white;
+}
+button{
+	width:160px;
+	height:50px;
+}
