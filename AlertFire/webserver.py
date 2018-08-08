@@ -9,6 +9,7 @@ UPLOAD_FOLDER = '/static/images/detection'
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+setTemp = 100
 
 @app.route('/')
 def index():
@@ -45,17 +46,27 @@ def newFiles():
     return render_template('newFiles.html')
 
 
+@app.route('/templates/dangerous/<int:max_t>')
+def maxTemp(max_t):
+    global setTemp
+    setTemp = max_t
+    return render_template(url_for('O'))
 
 
+@app.route('/maxtemp')
+def returnTemp():
+    return {'maxtemp': setTemp}
+
+@app.route('/static/images/detection')
 
 
-@app.route('/now-images', methods=['GET', 'POST'])
-def upload_images():
-    if request.method == 'POST':
-        file = request.files['file']
-        if file:
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('index'))
+# @app.route('/now-images', methods=['GET', 'POST'])
+# def upload_images():
+#     if request.method == 'POST':
+#         file = request.files['file']
+#         if file:
+#             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+#             return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
