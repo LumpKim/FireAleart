@@ -10,6 +10,8 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 setTemp = 100
+lastDangerous = 0
+
 
 @app.route('/')
 def index():
@@ -26,14 +28,23 @@ def admin():
     return render_template('admin.html')
 
 
-@app.route('/templates/dangerous.html')
+@app.route('/templates/dangerous.html', methods=['POST', 'GET'])
 def originalDangerous():
-    return render_template('dangerous.html')
+    if request.method == 'POST':
+        result = request.form
+        if lastDangerous == 0:
+            return render_template('dangerous.html',result=result)
+
+        elif lastDangerous == 1:
+            return render_template('dangerous1.html',result=result)
+
+        elif lastDangerous == 2:
+            return render_template('dangerous2.html',result=result)
 
 
 @app.route('/templates/dangerous1.html')
 def firstDangerous():
-    return render_template('dangerous1.html')
+    return render_template('dangerous.html')
 
 
 @app.route('/templates/dangerous2.html')
@@ -46,18 +57,18 @@ def newFiles():
     return render_template('newFiles.html')
 
 
-@app.route('/templates/dangerous/<int:max_t>')
-def maxTemp(max_t):
-    global setTemp
-    setTemp = max_t
-    return render_template(url_for('O'))
-
-
-@app.route('/maxtemp')
-def returnTemp():
-    return {'maxtemp': setTemp}
-
-@app.route('/static/images/detection')
+# @app.route('/templates/dangerous/<int:max_t>')
+# def maxTemp(max_t):
+#     global setTemp
+#     setTemp = max_t
+#     return render_template(url_for('O'))
+#
+#
+# @app.route('/maxtemp')
+# def returnTemp():
+#     return {'maxtemp': setTemp}
+#
+# @app.route('/static/images/detection')
 
 
 # @app.route('/now-images', methods=['GET', 'POST'])
